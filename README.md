@@ -30,7 +30,7 @@ folder.
 	from unipath import Path
 	SITE_ROOT = Path(__file__).ancestor(2)
 
-**Note:** Be sure you `import os` before using the above code or you'll get an
+**Note:** Be sure you install the unipath module before using the above code or you'll get an
 error!
 
 
