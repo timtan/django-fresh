@@ -27,7 +27,8 @@ This will dynamically grab the location of your settings file and make it your
 site root, django-fresh will recursively watch everything in the settings file's
 folder.
 
-    SITE_ROOT = os.path.dirname(os.path.abspath(__file__))
+	from unipath import Path
+	SITE_ROOT = Path(__file__).ancestor(2)
 
 **Note:** Be sure you `import os` before using the above code or you'll get an
 error!
