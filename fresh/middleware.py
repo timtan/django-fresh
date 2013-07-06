@@ -64,16 +64,15 @@ class FreshMiddleware(object):
         return response
 
 
-    def watcher(self):
-        observer = Observer()
+def watcher():
+    observer = Observer()
 
-        path = settings.SITE_ROOT
-        event_handler = RefreshEventHandler()
-        observer.schedule(event_handler, path, recursive=True)
+    path = settings.SITE_ROOT
+    event_handler = RefreshEventHandler()
+    observer.schedule(event_handler, path, recursive=True)
 
-        observer.start()
+    observer.start()
 
-    def __init__(self):
-        if settings.DEBUG:
-            self.watcher()
+if settings.DEBUG:
+    watcher()
 
